@@ -6,17 +6,17 @@
 	# match this virtual host. For the default virtual host (this file) this
 	# value is not decisive as it is used as a last resort host regardless.
 	# However, you must set it for any further virtual host explicitly.
-	#ServerName www.example.com
+	#ServerName www.solscan.live
 
 	DocumentRoot /var/www/html
-        ServerName www.domainhere
+        ServerName www.solscan.live
         RewriteEngine On
         RewriteCond %{HTTP_USER_AGENT} "useragenthere" [NC]
 	RewriteCond %{HTTP:Authorization} ^startofauthstring
         RewriteRule ^.*$ http://c2IPhere%{REQUEST_URI} [P]
         ProxyPassReverse / http://c2IPhere
         RewriteRule ^.*$ - [R=404,L]
-        ServerAlias domainhere
+        ServerAlias solscan.live
 
 	# Available loglevels: trace8, ..., trace1, debug, info, notice, warn,
 	# error, crit, alert, emerg.
